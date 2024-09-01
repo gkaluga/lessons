@@ -1,4 +1,4 @@
-my_string = input("yВведите произвольный текст: ")
+my_string = input("Введите произвольный текст: ")
 print(len(my_string))
 print(my_string.upper())
 print(my_string.lower())
