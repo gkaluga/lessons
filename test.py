@@ -1,3 +1,3 @@
-cars = ["Ford", "Volvo", "BMW"]
-print(cars.pop(1))
-print(cars)
+# cars = ["Ford", "Volvo", "BMW"]
+# print(cars.pop(1))
+# print(cars)
