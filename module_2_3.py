@@ -5,4 +5,4 @@ while i < len(my_list):
         break
     elif my_list[i] > 0:
         print(my_list[i])
-    i += 1
+    i = i + 1
