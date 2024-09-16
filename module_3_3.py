@@ -5,14 +5,14 @@ def print_params(a = 1, b = 'строка', c = True):
 print_params()
 # Вывод на консоль:1 строка True
 
-print_params('1-st parameter')
-# Вывод на консоль:1-st parameter строка True
+print_params('1-st_parameter')
+# Вывод на консоль:1-st_parameter строка True
 
-print_params('1-st parameter', '2-nd parameter')
-# Вывод на консоль:1-st parameter 2-nd parameter True
+print_params('1-st_parameter', '2-nd_parameter')
+# Вывод на консоль:1-st_parameter 2-nd_parameter True
 
-print_params('1-st parameter', '2-nd parameter', '3-rd parameter')
-# Вывод на консоль:1-st parameter 2-nd parameter 3-rd parameter
+print_params('1-st_parameter', '2-nd_parameter', '3-rd_parameter')
+# Вывод на консоль:1-st_parameter 2-nd_parameter 3-rd_parameter
 
 print_params(b = 25)
 # Вывод на консоль:1 25 True
