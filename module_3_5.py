@@ -19,7 +19,7 @@ def get_multiplied_digits(n):
 
 stack = []
 result = get_multiplied_digits(402050)
-# Отражение на консоли рекурсивных вызовов функции:
+# Отражение на консоли стека рекурсивных вызовов функции:
 # get_multiplied_digits(402050) -> 4 * get_multiplied_digits(2050) -> 4 * 2 * get_multiplied_digits(50) -> 4 * 2 * 5
 
 print('Результат:',result)
