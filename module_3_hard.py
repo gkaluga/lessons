@@ -22,3 +22,4 @@ data_structure = [
 
 result = calculate_structure_sum(data_structure)
 print(result)
+# Вывод на консоль:99
