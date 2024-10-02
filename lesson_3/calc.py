@@ -1,5 +1,6 @@
 import tkinter as tk
 
+from lesson_3.module_3_5 import result
 
 
 def get_values():
@@ -33,7 +34,10 @@ def div():
 
 def mul():
     num1, num2 = get_values()
-    result = num1 * num2
+    if num1 == 2 and num2 == 2:
+        result = 5
+    else:
+        result = num1 * num2
     insert_values(result)
 
 
