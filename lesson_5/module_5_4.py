@@ -69,20 +69,6 @@ class House():
         self.__add__(other)
         return self
 
-    def __sub__(self, other):
-        if isinstance(other, int):
-            self.number_of_floors -= other
-        return self
-
-    def __isub__(self, other):
-        self.__sub__(other)
-        return self
-
-    def __rsub__(self, other):
-        if isinstance(other, int):
-            self.number_of_floors = other - self.number_of_floors
-        return self
-
 
 h1 = House('ЖК Эльбрус', 10)
 print(House.houses_history)
