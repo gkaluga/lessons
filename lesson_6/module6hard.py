@@ -2,6 +2,8 @@ from math import pi
 
 
 class Figure:
+    """   Класс фигуры (родительский)   """
+
     sides_count = 0
 
     def __init__(self, color, *sides):
@@ -34,6 +36,8 @@ class Figure:
 
 
 class Circle(Figure):
+    """   Класс круга   """
+
     sides_count = 1
 
     def __init__(self, color, *sides):
@@ -47,6 +51,8 @@ class Circle(Figure):
 
 
 class Triangle(Figure):
+    """   Класс треугольника   """
+
     sides_count = 3
 
     def __init__(self, color, *sides):
@@ -60,6 +66,7 @@ class Triangle(Figure):
         return pow(p * (p - sides[0]) * (p - sides[1]) * (p - sides[2]), 0.5)
 
 class Cube(Figure):
+    """   Класс куба   """
     sides_count = 12
 
     def __init__(self, color, *sides):
