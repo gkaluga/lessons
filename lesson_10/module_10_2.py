@@ -3,6 +3,8 @@ from time import sleep
 
 
 class Knight(Thread):
+    """   Класс рыцарей   """
+
     def __init__(self, name, power):
         super().__init__()
         self.name = name
@@ -27,7 +29,7 @@ class Knight(Thread):
 
 
 if __name__ == '__main__':
-    # Создание класса
+    # Создание классов
     first_knight = Knight('Sir Lancelot', 10)
     second_knight = Knight("Sir Galahad", 20)
     # Запуск потоков и остановка текущего
