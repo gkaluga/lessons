@@ -10,18 +10,19 @@ class Bank:
 
     def deposit(self):
         for _ in range(100):
-            val = randint(50,500)
+            val = randint(50, 500)
             self.balance += val
+            print(f'Пополнение: {val}. Баланс: {self.balance}\n', end='')
             # \n вставил в строку вывода, иначе другой поток периодически
             # выводил свой текст перед выводом перевода строки в текущем потоке
-            print(f'Пополнение: {val}. Баланс: {self.balance}\n', end='')
+
             if self.balance >= 500 and self.lock.locked():
                 self.lock.release()
             sleep(0.01)
 
     def take(self):
         for _ in range(100):
-            val = randint(50,500)
+            val = randint(50, 500)
             print(f'Запрос на {val}\n', end='')
             if self.balance >= val:
                 self.balance -= val
@@ -32,16 +33,15 @@ class Bank:
             sleep(0.01)
 
 
+if __name__ == '__main__':
+    bk = Bank()
 
-bk = Bank()
+    th1 = Thread(target=Bank.deposit, args=(bk,))
+    th2 = Thread(target=Bank.take, args=(bk,))
 
-# Т.к. методы принимают self, в потоки нужно передать сам объект класса Bank
-th1 = Thread(target=Bank.deposit, args=(bk,))
-th2 = Thread(target=Bank.take, args=(bk,))
+    th1.start()
+    th2.start()
+    th1.join()
+    th2.join()
 
-th1.start()
-th2.start()
-th1.join()
-th2.join()
-
-print(f'Итоговый баланс: {bk.balance}')
+    print(f'Итоговый баланс: {bk.balance}')
