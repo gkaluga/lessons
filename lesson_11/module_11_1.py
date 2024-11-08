@@ -4,6 +4,8 @@ import numpy as np
 
 
 def test_numpy():
+    """   Тестирование библиотеки NumPy   """
+
     print('Создание массивов')
     m1 = np.array([1, 2, 3])
     m2 = np.array([4, 5, 6])
@@ -27,6 +29,8 @@ def test_numpy():
 
 
 def test_requests():
+    """   Тестирование библиотеки Requests   """
+
     JSON_URL = 'https://binaryjazz.us/wp-json/genrenator/v1/genre'
     r = requests.get(JSON_URL)
     print(r.status_code, r.headers['content-type'])
@@ -39,9 +43,10 @@ def test_requests():
     with open('car.jpg', 'bw') as im_car:
         im_car.write(r.content)
 
-    print(dir(r))
 
 def test_pillow():
+    """   Тестирование библиотеки Pillow   """
+
     im = Image.open('car.jpg')
     print(im.format, im.size, im.mode)
     w, h = im.size
@@ -51,6 +56,7 @@ def test_pillow():
     im.close()
 
 
-test_numpy()
-test_requests()
-test_pillow()
+if __name__ == '__main__':
+    test_numpy()
+    test_requests()
+    test_pillow()
