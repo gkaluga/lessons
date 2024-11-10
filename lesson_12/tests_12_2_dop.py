@@ -51,6 +51,34 @@ class TournamentTest(unittest.TestCase):
         slowest_runner = min(participants, key=lambda val: val.speed)
         self.assertTrue(worst_rezult.name == slowest_runner.name)
 
+    def test_fourth_tournament(self):
+        """
+        Дополнительный тест: слабый бегун выше в стартовом списке.
+        Тест не пройден. Более быстрый бегун показывает худший результат.
+        :return: Failure
+        """
+        participants = (self.r_a, self.r_u)
+        t = rt.Tournament(90, *participants)
+        result = t.start()
+        TournamentTest.all_results[4] = result
+        worst_rezult = result[max(result.keys())]
+        slowest_runner = min(participants, key=lambda val: val.speed)
+        self.assertTrue(worst_rezult.name == slowest_runner.name)
+
+    def test_fifth_tournament(self):
+        """
+        Дополнительный тест: слабый бегун выше в списке,
+        с модифицированным методом start_mod тестируемого класса
+        :return: Ok
+        """
+        participants = (self.r_a, self.r_u)
+        t = rt.Tournament(90, *participants)
+        result = t.start_mod()
+        TournamentTest.all_results[5] = result
+        worst_rezult = result[max(result.keys())]
+        slowest_runner = min(participants, key=lambda val: val.speed)
+        self.assertTrue(worst_rezult.name == slowest_runner.name)
+
 
 if __name__ == '__main__':
     unittest.main()
