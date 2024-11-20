@@ -6,7 +6,7 @@ from crud_functions import *
 
 
 initiate_db()
-API = '6988926972:AAGrEvGc5JIgDW7KfJVcnwEqHvS7qmdd5dY'
+API = ''
 bot = Bot(token=API)
 dp = Dispatcher(bot, storage=MemoryStorage())
 
@@ -82,7 +82,6 @@ async def send_calories(message: types.Message, state):
     calories = round(10 * int(data['weight']) + 6.25 * int(data['growth']) - 5 * int(data['age']) + 5)
     await message.answer(f'Ваша норма каллорий: {calories}')
     await state.finish()
-    await message.answer('Привет! Я бот, помогающий твоему здоровью.', reply_markup=markup)
 
 
 @dp.message_handler(text='Купить')
